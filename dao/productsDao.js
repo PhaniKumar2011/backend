@@ -1,5 +1,6 @@
 import mongodb from "mongodb"
-const ObjectId = mongodb.ObjectID
+const ObjectId = mongodb.ObjectId;
+
 let products
 
 export default class ProductsDAO {
@@ -60,7 +61,8 @@ export default class ProductsDAO {
       return { productsList: [], totalNumproducts: 0 }
     }
   }
-  static async GetProductsById(id) {
+  static async GetProductByID(id)
+  {
     try{
       const pipeline=[
           {
@@ -102,16 +104,6 @@ export default class ProductsDAO {
     }
   } 
 
-   static async getCategories(){
-    let categories=[]
-    try{
-        categories = await products.distinct("category")
-        return categories
-    }
-    catch(e){
-        console.error(`unable to get categories :${e}`)
-        return categories
-    }
-} 
+ 
 }
 

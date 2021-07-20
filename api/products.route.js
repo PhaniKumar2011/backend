@@ -7,7 +7,7 @@ const router = express.Router()
 
 router.route("/").get(ProductsController.apiGetProducts)
 router.route("/id/:id").get(ProductsController.apiGetProductById)
-router.route("/categories").get(ProductsController.apiGetProductsByCategories)
+
 
 router
   .route("/review")

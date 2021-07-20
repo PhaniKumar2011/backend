@@ -45,14 +45,5 @@ export default class ProductsController {
       }
     }
   
-    static async apiGetProductsByCategories(req, res, next) {
-      try {
-        let categories = await ProductsDAO.getCategories()
-        res.json(categories)
-      } 
-      catch (e) {
-        console.log(`api, ${e}`)
-        res.status(500).json({ error: e })
-      }
-    }  
+  
 }
